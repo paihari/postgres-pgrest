@@ -1,0 +1,23 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: solution_design
+
+  postgrest:
+    image: postgrest/postgrest
+    restart: always
+    depends_on:
+      - postgres
+    ports:
+      - 3000:3000
+    environment:
+      PGRST_DB_URI: postgres://postgres:postgres@postgres:5432/solution_design
+      PGRST_DB_SCHEMA: public
+      PGRST_DB_ANON_ROLE: postgres
+      PGRST_JWT_SECRET: your_jwt_secret
+  
