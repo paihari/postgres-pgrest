@@ -1,4 +1,5 @@
-POST REST CALLS
+
+Exposure of PostGres Database tables as REST API
 
 (base) bantwal@Hariprasads-MacBook-Air ~ % curl http://localhost:3000/employee
 [{"id":1,"name":"Mickex","age":12,"department":"QA"}]%                                                                           (base) bantwal@Hariprasads-MacBook-Air ~ % payload='{"name": "John Doe", "age": 30}'
